@@ -7,14 +7,14 @@ public class MaxSubarraySum {
     }
 
     public static int maxSubArray(int[] nums) {
-        int maxSoFar = nums[0]; // Sabse pehle element ko maxSoFar set karte hain
-        int currentMax = nums[0]; // Current max ko bhi pehle element se shuru karte hain
+        int maxSoFar = nums[0]; 
+        int currentMax = nums[0];
 
         for (int i = 1; i < nums.length; i++) {
-            currentMax = Math.max(nums[i], currentMax + nums[i]); // Current max ko update karte hain
-            maxSoFar = Math.max(maxSoFar, currentMax); // Max so far ko update karte hain
+            currentMax = Math.max(nums[i], currentMax + nums[i]); 
+            maxSoFar = Math.max(maxSoFar, currentMax); 
         }
 
-        return maxSoFar; // Final max sum return karte hain
+        return maxSoFar;
     }
 }
