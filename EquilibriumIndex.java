@@ -3,21 +3,21 @@ public class EquilibriumIndex {
         int totalSum = 0;
         int leftSum = 0;
 
-        // Step 1: Total sum calculate karna
+       
         for (int num : arr) {
             totalSum += num;
         }
 
-        // Step 2: Equilibrium index check karna
+        
         for (int i = 0; i < arr.length; i++) {
-            // Right sum calculate: totalSum - leftSum - arr[i]
+        
             if (leftSum == (totalSum - leftSum - arr[i])) {
-                return i + 1; // 1-based index
+                return i + 1; 
             }
-            leftSum += arr[i]; // Update left sum
+            leftSum += arr[i]; 
         }
 
-        return -1; // Agar koi equilibrium index nahi mila
+        return -1; 
     }
 
     public static void main(String[] args) {
@@ -25,8 +25,8 @@ public class EquilibriumIndex {
         int[] arr2 = {1, 2, 3};
         int[] arr3 = {1, 3, 5, 2, 2};
 
-        System.out.println(findEquilibriumIndex(arr1)); // Output: 4
-        System.out.println(findEquilibriumIndex(arr2)); // Output: -1
-        System.out.println(findEquilibriumIndex(arr3)); // Output: 2
+        System.out.println(findEquilibriumIndex(arr1)); 
+        System.out.println(findEquilibriumIndex(arr2)); 
+        System.out.println(findEquilibriumIndex(arr3)); 
     }
 }
