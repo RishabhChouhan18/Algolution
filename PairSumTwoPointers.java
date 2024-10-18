@@ -6,14 +6,14 @@ public class PairSumTwoPointers {
         while (left < right) {
             int sum = A[left] + A[right];
             if (sum == X) {
-                return "Yes"; // Pair found
+                return "Yes"; 
             } else if (sum < X) {
-                left++; // Move left pointer to the right
+                left++; 
             } else {
-                right--; // Move right pointer to the left
+                right--; 
             }
         }
-        return "No"; // No pair found
+        return "No"; 
     }
 
     public static void main(String[] args) {
@@ -21,6 +21,6 @@ public class PairSumTwoPointers {
         int N = 6;
         int X = 9;
 
-        System.out.println(findPairTwoPointer(A, N, X)); // Output: Yes
+        System.out.println(findPairTwoPointer(A, N, X)); 
     }
 }
