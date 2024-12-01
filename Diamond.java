@@ -8,7 +8,7 @@ public class Diamond {
             for (int j = n; j > i; j--) {
                 System.out.print(" "); 
             }
-            // Stars print karna
+            
             for (int j = 1; j <= i; j++) {
                 System.out.print("* ");
             }
