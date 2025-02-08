@@ -1,34 +1,45 @@
 // set-3 Quetion no. 2
-import java.util.ArrayList;
-import java.util.List;
-public class SubArrayOr {
-    static List<Integer> ans = new ArrayList<>();
+import java.util.*;
 
-    static void check(List<Integer> v) {
-        int a=0;
-        for(int i =0; i<v.size(); i++){
-            a=a| v.get(i);
+public class SubarrayOR {
+
+    
+    public static int calculateSubarrayOR(int[] arr) {
+        int n = arr.length;
+        Set<Integer> orResults = new HashSet<>();
+
+         
+        for (int i = 0; i < n; i++) {
+            int currentOR = 0;
+
+            for (int j = i; j < n; j++) {
+                currentOR |= arr[j]; 
+                orResults.add(currentOR); 
+            }
         }
-        ans.add(a);
+
+        int finalOR = 0;
+        for (int orValue : orResults) {
+            finalOR |= orValue;
+        }
+
+        return finalOR; 
     }
 
     public static void main(String[] args) {
-        List<Integer> v = List.of(10,100,1000);
-        int result =0;
-        for(int i =0; i<v.size(); i++){
-            List<Integer> subArray = new ArrayList<>();
-            for(int j = i; j<v.size(); j++ ){
-                subArray.add(v.get(j));
-                check(subArray);
-            }
-        }
-        for(int i =0; i< ans.size(); i++){
-            System.out.println(" " + ans.get(i));
-            result = result | ans.get(i);
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        
+        int[] arr = new int[n];
+        System.out.print("Enter the array elements: ");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
         }
-        System.out.println();
-        System.out.println("result is = "+result);;
+
+        int result = calculateSubarrayOR(arr);
+
+        System.out.println("The OR of all subarrays' ORs is: " + result);
     }
 }
-
