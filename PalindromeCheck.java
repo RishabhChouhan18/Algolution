@@ -1,35 +1,21 @@
-import java.util.Scanner;
-public class PalindromeCheck {
-    public static void main(String[] args) {
+class PalindromeCheck{
+    static boolean check(int[] array){
+       int l= 0;
+       int r= array.length-1;
         
-        Scanner scanner = new Scanner(System.in);
-
-      
-        int[] numbers = new int[5];
-
-        
-        System.out.println("Enter 5 integers:");
-        for (int i = 0; i < 5; i++) {
-            numbers[i] = scanner.nextInt();
-        }
-
-        
-        boolean isPalindrome = true;
-        for (int i = 0; i < numbers.length / 2; i++) {
-            if (numbers[i] != numbers[numbers.length - 1 - i]) {
-                isPalindrome = false;
-                break;
+        while(l<=r){
+            if(array[l]!= array[r]){
+                 System.out.println("array is not palindrome");
+                 return false;
             }
+             l++;
+             r--;
         }
-
-        if (isPalindrome) {
-            System.out.println("The array is in palindrome order.");
-        } else {
-            System.out.println("The array is not in palindrome order.");
-        }
-
-       
-        scanner.close();
+        System.out.println("array is palindrome");
+        return true;
+    }
+    public static void main(String[] args){
+        int[] array = {44,56,56,44};
+        check(array);
     }
 }
-
